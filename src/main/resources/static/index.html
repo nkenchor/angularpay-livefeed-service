@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AngularPay Livefeed</title>
+    <link rel="icon" href="https://angularpay.io/favicon.svg">
+    <link href="webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+    <script src="webjars/jquery/jquery.min.js"></script>
+    <script src="webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+    enabled. Please enable
+    Javascript and reload this page!</h2></noscript>
+<div id="main-content" class="container">
+    <div class="row mb-4 p-4">
+        <div class="col-md-12">
+            <h1 style="color: #462aa5;" class="display-4 p-0 m-0">Angular<span style="font-weight: bold">Pay</span></h1>
+            <h2 class="p-0 m-0 text-success">Livefeed</h2>
+        </div>
+    </div>
+    <div class="row shadow-sm border mb-4 p-4">
+        <div class="col-md-12">
+            <h3 class="text-dark" style="font-weight: normal">Credentials</h3>
+            <div class="form-group">
+                <label for="access_token">Access Token:</label>
+                <input type="text" name="access_token" id="access_token" class="form-control"
+                       placeholder="Enter access token">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="btn-group mt-4">
+                <button id="connect" class="btn btn-success" type="submit">Connect</button>
+                <button id="disconnect" class="btn btn-danger" type="submit" disabled="disabled">Disconnect</button>
+            </div>
+        </div>
+    </div>
+    <div class="row shadow-sm border mb-4 p-4">
+        <div class="col-md-12">
+            <table id="updates_history" class="table table-striped">
+                <thead>
+                <tr>
+                    <th><h3 class="text-dark" style="font-weight: normal">Status:
+                        <span class="text-muted" id="connection_status">NOT Connected</span>
+                    </h3></th>
+                </tr>
+                </thead>
+                <tbody id="livefeed_updates">
+                <tr>
+                    <td>When connected, Live feed updates will show up here...</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

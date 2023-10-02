@@ -1,0 +1,18 @@
+server:
+  port: 20490
+
+spring:
+  application.name: livefeed-service
+
+logging:
+  level:
+    root: INFO
+    org:
+      springframework: INFO
+
+angularpay:
+  websocketOrigin: http://localhost:20320
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 10000
